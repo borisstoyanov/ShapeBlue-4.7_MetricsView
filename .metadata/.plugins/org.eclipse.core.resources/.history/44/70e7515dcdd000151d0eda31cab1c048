@@ -1,0 +1,12 @@
+package shape_blue.ui_tests.steps_definitions;
+
+import cucumber.api.java.en.Given;
+
+public class Zones_steps {
+
+	
+	@Given("^I am on the EuromoneyPage$")
+	public void i_am_on_the_EuromoneyPage(){
+		
+	}
+}

@@ -1,0 +1,33 @@
+Feature: Zones Metrics
+As a customer,
+I want to go to the Zones Metrics page
+so that I can view all related metrics to the Zones
+
+  Scenario: Pricing changes when I change number of websites
+    Given I'm on the SignupPage
+     When I select 3 websites
+     Then basic should be: "50.07"
+      And pro should be: "74.97"
+      And business: "124.98"
+
+  Scenario: Select a plan and signup
+    Given I'm on the SignupPage
+     When I buy SucuriAntivirusSolution
+     Then I should be at the CreateAccountPage
+     When I enter email:"randomemail3@email.com"
+      And I enter password:"SOMEsecret1"
+      And I agree with terms
+      And I click CreateAccount
+     Then I shoud be on the checkout page
+  
+  Scenario Outline: Search for regulation by partial text
+    Given a user goes to consumer rights
+    When they Search for <partial_query>
+    Then user should be displayed with search results
+    And the first regulation should be <partial_query>
+
+  Examples:
+  |partial_query|
+  |Sale of|
+  |Distance Selling|
+  |Payment Services|

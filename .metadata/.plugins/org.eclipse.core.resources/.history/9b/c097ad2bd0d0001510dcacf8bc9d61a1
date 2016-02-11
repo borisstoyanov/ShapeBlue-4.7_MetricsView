@@ -1,0 +1,7 @@
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+@CucumberOptions(features = "src/test/java/shape_blue/ui_tests/features",
+			format = {"pretty"})
+public class RunCuckes extends AbstractTestNGCucumberTests {
+}
