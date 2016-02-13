@@ -1,4 +1,4 @@
-Feature: Zones MetricsUI
+Feature: Zones Metrics General UI Features
   As a customer,
   I want to go to the Zones Metrics page
   so that I can view all related metrics to the Zones
@@ -29,13 +29,13 @@ Feature: Zones MetricsUI
     Then I should not be able to see the <metric> metrics
     But when I expand the <metric> column
     Then I should be able to see the <metric> metrics
-  
+
   Scenario Outline: All metrics columns are sortable
     Given I am on the ZoneMetricsPage
     When I sort the <metric> column ascending
-    Then I should see the <metric> metrics displayed ascending 
-    But when I sort the <metric> column descending 
-    Then I should see the <metric> metrics displayed descending  
+    Then I should see the <metric> metrics displayed ascending
+    But when I sort the <metric> column descending
+    Then I should see the <metric> metrics displayed descending
 
     Examples: 
       | metric           |
