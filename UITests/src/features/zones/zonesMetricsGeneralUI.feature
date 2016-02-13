@@ -9,18 +9,18 @@ Feature: Zones Metrics General UI Features
     Then I should be displated with the ZoneMetricsPage
 
   Scenario: Breadcrumb navigation displays the right location of the page
-    Given I am on the ZoneMetricsPage
+    Given I am on ZoneMetricsPage
     Then the breadcrumb should display the right location of the page
 
   Scenario: RefreshButton is refreshing the ZoneMetricsPage
-    Given I am on the ZoneMetricsPage
+    Given I am on ZoneMetricsPage
     And I get the value for a specific metric
     When I execute a mocked method to change a metric
-    And I click the RefreshButton
+    And I click RefreshButton
     Then I should be displated with the updated value of the metric
 
   Scenario: All metrics are displated
-    Given I am on the ZoneMetricsPage
+    Given I am on ZoneMetricsPage
     And I have the following metrics:
       | Name             |
       | State            |
@@ -37,7 +37,7 @@ Feature: Zones Metrics General UI Features
     Then they should be displayed
 
   Scenario: All metrics columns are collapseble and expandable
-    Given I am on the ZoneMetricsPage
+    Given I am on ZoneMetricsPage
     And I have the following metrics:
 	  | Name             |
       | State            |
@@ -54,7 +54,7 @@ Feature: Zones Metrics General UI Features
     Then I collapse and expand the metric
 
   Scenario: All metrics columns are sortable
-    Given I am on the ZoneMetricsPage
+    Given I am on ZoneMetricsPage
     And I have the following metrics:
 	  | Name             |
       | State            |

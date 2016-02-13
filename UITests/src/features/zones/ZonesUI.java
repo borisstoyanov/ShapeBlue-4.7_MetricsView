@@ -6,13 +6,17 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import page_objects.PO_ZoneMetricsPage;
+import page_objects.PO_ZonesPage;
 import util.CallAPI;
 
 public class ZonesUI {
 	String newValue;
 	String oldValue;
-	PO_ZoneMetricsPage zoneMetrics;
 	List<String> metrics;
+
+	
+	PO_ZoneMetricsPage zoneMetrics;
+	PO_ZonesPage zonesPage;
 
 	@Then("^they should be displayed$")
 	public void they_should_be_displayed() {
@@ -29,6 +33,20 @@ public class ZonesUI {
 
 	}
 
+	@Given("^I am on ZoneMetricsPage$")
+	public void I_am_on_ZoneMetricsPage(){
+		zonesPage = new PO_ZonesPage();
+		zonesPage.Goto();
+		zoneMetrics = zonesPage.clickZoneMetrics();
+
+	}
+	
+	@When("^I click RefreshButton$")
+	public void I_click_RefreshButton() {
+		zoneMetrics.clickRefresh();
+
+	}
+	
 	@Then("^the breadcrumb should display the right location of the page$")
 	public void the_breadcrumb_should_display_the_right_location_of_the_page() {
 		zoneMetrics.checkBreadcrumb();
