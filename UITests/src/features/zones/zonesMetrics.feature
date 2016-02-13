@@ -3,11 +3,6 @@ Feature: Zones Metrics
   I want to go to the Zones Metrics page
   so that I can be sure all metrics are showing correct values
 
-  Scenario: MetricsButton gets us to ZoneMetricsPage
-    Given I am on the ZonesPage
-    When I click on MetricsButton
-    Then I should be displayed with the ZoneMetricsPage
-
   Scenario: Clicking on a zone name will navigate the user to ClusterView of the specific zone
     Given I am on the ZoneMetricsPage
     When I click on the Name of a Zone
@@ -83,4 +78,16 @@ Feature: Zones Metrics
       | metric           |
       | CPU Allocated    |
       | Memory Allocated |
-
+      
+  Scenario: Changing the threshold near the current value should display the metric in amber
+    Given I am on the ZoneMetricsPage
+	And I get the value of a metric:
+	When I update the threshold to be slightly above the metric value 
+	Then the metric should be displayed in amber
+	
+  Scenario: Changing the threshold below the current value should display the metric in red
+    Given I am on the ZoneMetricsPage
+	And I get the value of a metric:
+	When I update the threshold to be below the metric value 
+	Then the metric should be displayed in red
+  
