@@ -1,7 +1,5 @@
 package page_objects;
 
-import org.junit.Assert;
-
 public class PO_ZoneMetricsPage {
 
 	public double getDisplayedCPUAllocation(){
@@ -78,6 +76,54 @@ public class PO_ZoneMetricsPage {
 	}
 
 	public void checkMemoryAllocatedIsRed() {
+		
+	}
+
+	public void checkBreadcrumb() {
+		//Checks if breadcrumb is displaying correct values
+	}
+
+	public String getSomeValue() {
+		return null;
+	}
+
+	public void valueIsDisplayed(String newValue) {
+
+	}
+
+	public void valueNotDisplayed(String oldValue) {
+		
+	}
+
+	public void collapseMetric(String metric) {
+		
+	}
+
+	public void verifyMetricCollapsed(String metric) {
+		
+	}
+
+	public void expandMetric(String metric) {
+		
+	}
+
+	public void verifyMetricExpanded(String metric) {
+		
+	}
+
+	public void sortAsc(String metric) {
+		
+	}
+
+	public void verifyMetricSortAsc(String metric) {
+		
+	}
+
+	public void sertDesc(String metric) {
+		
+	}
+
+	public void verifyMetricSortDesc(String metric) {
 		
 	}
 

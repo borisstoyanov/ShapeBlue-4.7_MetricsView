@@ -45,4 +45,8 @@ public class CallAPI {
 		
 	}
 
+	public static String updateSomeMetric() {
+		return null;
+	}
+
 }

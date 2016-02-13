@@ -9,7 +9,7 @@ Feature: Zones Metrics General UI Features
     Then I should be displated with the ZoneMetricsPage
 
   Scenario: Breadcrumb navigation displays the right location of the page
-    Given I am on the ZonesPage
+    Given I am on the ZoneMetricsPage
     Then the breadcrumb should display the right location of the page
 
   Scenario: RefreshButton is refreshing the ZoneMetricsPage
@@ -20,7 +20,8 @@ Feature: Zones Metrics General UI Features
     Then I should be displated with the updated value of the metric
 
   Scenario: All metrics are displated
-    Given the follwing metrics:
+    Given I am on the ZoneMetricsPage
+    And I have the following metrics:
       | Name             |
       | State            |
       | Clusters         |
