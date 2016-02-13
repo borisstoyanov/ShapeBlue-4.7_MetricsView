@@ -1,4 +1,4 @@
-package shape_blue.ui_tests.steps_definitions;
+package features.zones;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;

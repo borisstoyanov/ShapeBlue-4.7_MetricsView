@@ -32,3 +32,8 @@ Feature: Zones Metrics
     Given I am on the QuickView of the <zone> zone
     When I press the ReleaseDedicatedZone button
     Then the <zone> should be released
+    
+  Scenario: User is able to delete a zone
+    Given I am on the QuickView of the <zone> zone
+    When I press the DeleteZone button
+    Then the <zone> should be Deleted
