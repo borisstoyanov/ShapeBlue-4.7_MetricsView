@@ -6,27 +6,27 @@ Feature: Zones Metrics
   Scenario: MetricsButton gets us to ZoneMetricsPage
     Given I am on the ZonesPage
     When I click on MetricsButton
-    Then I should be displated with the ZoneMetricsPage
+    Then I should be displayed with the ZoneMetricsPage
 
   Scenario: Clicking on a zone name will navigate the user to ClusterView of the specific zone
-    Given I am on the ZonesPage
+    Given I am on the ZoneMetricsPage
     When I click on the Name of a Zone
     Then I am navigated to ClustersView of that specific zone
 
   Scenario: Enabling a zone changes the state
-    Given I am on the ZonesPage
+    Given I am on the ZoneMetricsPage
     When I call the API to enable a zone
     Then the zone should be displayed as enabled
 
   Scenario: Enabling a cluster for a zone updates the clusters
-    Given I am on the ZonesPage
+    Given I am on the ZoneMetricsPage
     When I call the API to enable a cluster for a zone
     Then the value of clusters should be updated
 
   Scenario Outline: <used> Used is displaying right percentage
-    Given I am on the ZonesPage
-    And I call the API to create:<used> Usage for a cluster of:"50%"
-    Then the value of <used> Usage should be sumOfAllCluserUseg devided by numberOfClusters
+    Given I am on the ZoneMetricsPage
+    And I call the API to create:<used> Usage for a cluster of:"50"
+    Then the value of <used> Usage should be sumOfAllCluserUseg divided by numberOfClusters
 
     Examples: 
       | used   |
@@ -34,9 +34,9 @@ Feature: Zones Metrics
       | Memory |
 
   Scenario Outline: <deviation> Useage Deviation
-    Given I am on the ZonesPage
-    And I get the avarage usage of all clusters
-    And I call the API to create: <deviation> Usage for a zone of:"200%"
+    Given I am on the ZoneMetricsPage
+    And I get the average usage of all clusters
+    And I call the API to create: <deviation> Usage for a zone of:"200"
     When I click the RefreshButton
     Then the <deviation> Deviation should be CurrentZoneUsage minus AvarageZonesUsage
 
@@ -46,8 +46,8 @@ Feature: Zones Metrics
       | Memory    |
 
   Scenario Outline: <allocation> displays correct data
-    Given I am on the ZonesPage
-    And I call API to set:<allocation> for a cluster of:"200%"
+    Given I am on the ZoneMetricsPage
+    And I call API to set:<allocation> for a cluster of:"200"
     When I click the RefreshButton
     Then the <allocation> should be sumOfAllocation devided by numberOfClusters
 
@@ -57,10 +57,10 @@ Feature: Zones Metrics
       | Memory Allocated |
 
   Scenario Outline: <total> Total displays correct data
-    Given I am on the ZonesPage
+    Given I am on the ZoneMetricsPage
     When I call the API to set:<total> Total Allocation for a zone
     And I click the RefreshButton
-    Then the value of clusters should be updated
+    Then the value of <total> Total Allocation should be updated
 
     Examples: 
       | total  |
@@ -81,11 +81,6 @@ Feature: Zones Metrics
 
     Examples: 
       | metric           |
-      | CPU Used         |
-      | CPU Max Dev      |
       | CPU Allocated    |
-      | CPU Total        |
       | Memory Allocated |
-      | Memory Total     |
-      | Memory Used      |
-      | Memory Max Dev   |
+

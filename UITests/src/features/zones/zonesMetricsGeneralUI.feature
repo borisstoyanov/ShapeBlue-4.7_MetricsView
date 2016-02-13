@@ -19,26 +19,8 @@ Feature: Zones Metrics General UI Features
     And I click the RefreshButton
     Then I should be displated with the updated value of the metric
 
-  Scenario Outline: All metrics are displated
-    Given I am on the ZoneMetricsPage
-    Then they should be displayed with the metric: <metric>
-
-  Scenario Outline: All metrics columns are collapseble and expandable
-    Given I am on the ZoneMetricsPage
-    When I collapse the <metric> column
-    Then I should not be able to see the <metric> metrics
-    But when I expand the <metric> column
-    Then I should be able to see the <metric> metrics
-
-  Scenario Outline: All metrics columns are sortable
-    Given I am on the ZoneMetricsPage
-    When I sort the <metric> column ascending
-    Then I should see the <metric> metrics displayed ascending
-    But when I sort the <metric> column descending
-    Then I should see the <metric> metrics displayed descending
-
-    Examples: 
-      | metric           |
+  Scenario: All metrics are displated
+    Given the follwing metrics:
       | Name             |
       | State            |
       | Clusters         |
@@ -51,3 +33,41 @@ Feature: Zones Metrics General UI Features
       | Memory Used      |
       | Memory Max Dev   |
       | QuickView        |
+    Then they should be displayed
+
+  Scenario: All metrics columns are collapseble and expandable
+    Given I am on the ZoneMetricsPage
+    And I have the following metrics:
+	  | Name             |
+      | State            |
+      | Clusters         |
+      | CPU Used         |
+      | CPU Max Dev      |
+      | CPU Allocated    |
+      | CPU Total        |
+      | Memory Allocated |
+      | Memory Total     |
+      | Memory Used      |
+      | Memory Max Dev   |
+      | QuickView        |
+    Then I collapse and expand the metric
+
+  Scenario: All metrics columns are sortable
+    Given I am on the ZoneMetricsPage
+    And I have the following metrics:
+	  | Name             |
+      | State            |
+      | Clusters         |
+      | CPU Used         |
+      | CPU Max Dev      |
+      | CPU Allocated    |
+      | CPU Total        |
+      | Memory Allocated |
+      | Memory Total     |
+      | Memory Used      |
+      | Memory Max Dev   |
+      | QuickView        |
+    Then I sort ascending and descending 
+
+
+    
