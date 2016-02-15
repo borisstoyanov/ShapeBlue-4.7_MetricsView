@@ -3,4 +3,6 @@
 <fullyQualifiedTypeName name="cucumber.api.java.en.Given"/>
 <fullyQualifiedTypeName name="cucumber.api.java.Before"/>
 <fullyQualifiedTypeName name="cucumber.api.java.After"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
 </qualifiedTypeNameHistroy>
