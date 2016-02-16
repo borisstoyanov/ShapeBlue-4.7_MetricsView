@@ -4,21 +4,10 @@ An Assignment I was given at Interview
 # Content: 
 
 <h2>UI Tests</h2> 
-A mocked tests that 
-
-
-<h2>Integratioin Tests</h2> 
-Integratioin Tests
-
-
-
-<h2>Manual Tests</h2> 
-Manual Tests
+Test steps and feature documents. Please refer to the Zones only, since the other features will follow the same structure.  
 
 
 # Tools Used: 
 - Java 
 - Cucumber
-- Selenium WebDriver
-- RestAssured
 - Maven

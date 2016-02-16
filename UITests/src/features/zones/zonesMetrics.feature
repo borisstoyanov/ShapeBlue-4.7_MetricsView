@@ -68,7 +68,7 @@ Feature: Zones Metrics
     And I click the RefreshButton
     Then I should see the new <metric> value displayed in amber
 
-  Scenario Outline: <metric> metric is displayed with amber color when exceeds the limit
+  Scenario Outline: <metric> metric is displayed with red color when exceeds the limit
     Given I am on the ZoneMetricsPage
     When I call an API to change the <metric> to exceed the limit
     And I click the RefreshButton
